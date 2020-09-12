@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "UploadExcel";
+}
+
+<h2>UploadExcel</h2>
+<div data-ng-controller="MainCtrl as vm" class="ng-cloak" data-ng-cloak>
+    <div data-ng-if="vm.granted">
+        <button type="button" class="btn btn-success" data-ng-click="vm.reset()">Reset</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-info" data-ng-click="vm.save()">Save</button>
+        <br />
+        <br />
+        <div class="alert alert-danger" data-role="alert" data-ng-if="vm.errorMessage">
+            <span class="glyphicon glyphicon-exclamation-sign" data-aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{vm.errorMessage}}
+        </div>
+        <div id="grid1" data-ui-grid="vm.gridOptions" class="grid">
+            <div class="grid-msg-overlay" data-ng-if="!vm.gridOptions.data.length">
+                <div class="msg">
+                    <div class="center">
+                        <span class="muted">Select Spreadsheet File</span>
+                        <br />
+                        <input type="file" accept=".xls,.xlsx,.ods" data-fileread="" data-opts="vm.gridOptions" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Dialog -->
+        <div class="modal fade" id="successConfirm" data-role="dialog" data-aria-labelledby="successConfirmLabel" data-aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>上傳成功</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<script src="~/Scripts/sheet.js"></script>*@
+

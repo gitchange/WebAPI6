@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Richard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PLANT_LOC_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPLICATION_CD" Type="nvarchar" MaxLength="50" />
+          <Property Name="PNL_SZ_NUM" Type="nvarchar" MaxLength="50" />
+          <Property Name="ITEM_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATA_CATG_CD" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATA_TYPE_CD" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIGER_IND" Type="nvarchar" MaxLength="50" />
+          <Property Name="CLNDR_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="UOM_CD" Type="nvarchar" MaxLength="50" />
+          <Property Name="BEG_INV_QTY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CMPY_NAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="NorthwindModelStoreContainer">
+          <EntitySet Name="Richard" EntityType="Self.Richard" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Richard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PLANT_LOC_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPLICATION_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PNL_SZ_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ITEM_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_CATG_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_TYPE_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIGER_IND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLNDR_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UOM_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BEG_INV_QTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CMPY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Richard" EntityType="Self.Richard" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+          <EntitySetMapping Name="Richard">
+            <EntityTypeMapping TypeName="NorthwindModel.Richard">
+              <MappingFragment StoreEntitySet="Richard">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PLANT_LOC_ID" ColumnName="PLANT_LOC_ID" />
+                <ScalarProperty Name="APPLICATION_CD" ColumnName="APPLICATION_CD" />
+                <ScalarProperty Name="PNL_SZ_NUM" ColumnName="PNL_SZ_NUM" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="MODEL_NAME" ColumnName="MODEL_NAME" />
+                <ScalarProperty Name="DATA_CATG_CD" ColumnName="DATA_CATG_CD" />
+                <ScalarProperty Name="DATA_TYPE_CD" ColumnName="DATA_TYPE_CD" />
+                <ScalarProperty Name="TIGER_IND" ColumnName="TIGER_IND" />
+                <ScalarProperty Name="CLNDR_MN" ColumnName="CLNDR_MN" />
+                <ScalarProperty Name="UOM_CD" ColumnName="UOM_CD" />
+                <ScalarProperty Name="BEG_INV_QTY" ColumnName="BEG_INV_QTY" />
+                <ScalarProperty Name="CMPY_NAME" ColumnName="CMPY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
